@@ -8,14 +8,20 @@
             <img class="thumbnail" src="{{post.image}}">
             <div class="box-element product">
                 <div class="row user-element">
-                    <div class="col-2">
-                        <img id="friends-icon" src="{% static '/images/userid.png' %}">
-                    </div>
-                    <div class="col">
-                        <h6 style='align-items-center'><strong>{{post.user}}</strong></h6>
+                    <div class="popover__wrapper">
+                        <div class="col-2">
+                            <img id="friends-icon" src="{{post.profileImage}}">
+                        </div>
+                        <div class="col flexing">
+                            <h6><strong>{{post.account}}</strong></h6>
+                        </div>
+                        <div class="popover__content">
+                            <p class="popover__message">{{post.name}}</p>
+                            <img alt="{{post.account}}" src="{{post.profileImage}}">
+                        </div>
                     </div>
                 </div>
-                <p>{{post.description}}</p>
+                <p> {{post.description}}</p>
                 <hr>
                 <div>
                     <button type="button" class="btn btn-outline-success" data-bs-toggle="button" autocomplete="onClick">Like</button>

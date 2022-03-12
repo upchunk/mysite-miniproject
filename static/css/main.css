@@ -14,12 +14,20 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .user-element{
+	display: flex;
 	box-shadow:hsl(0, 0%, 80%) 0 0 16px;
 	background-color: #fff;
 	border-radius: 4px;
-	margin-left: 0px;
-	margin-right: 0px;
-	padding: 12px;
+	margin:auto;
+	padding: 10px;
+	align-items:center;
+	justify-content:center;
+}
+
+.flexing{
+	display: flex;
+	align-items:center;
+	justify-content:center;
 }
 
 .thumbnail{
@@ -44,14 +52,15 @@ h1,h2,h3,h4,h5,h6{
 
 #user-icon{
 	width:30px;
-	display: inline-block;
+	display: inline-flex;
 	margin-left: 10px;
+	border-radius: 50%
 }
 
 #friends-icon{
 	width:40px;
 	width:40px;
-	display: block;
+	display: inline-flex;
 	border-radius: 50%;
 }
 
@@ -140,3 +149,62 @@ h1,h2,h3,h4,h5,h6{
 .hidden{
 	display: none!important;
 }
+
+a {
+	text-decoration: none;
+  }
+  
+.popover__title {
+	font-size: 24px;
+	line-height: 36px;
+	text-decoration: none;
+	color: rgb(228, 68, 68);
+	text-align: center;
+	padding: 15px 0;
+  }
+  
+.popover__wrapper {
+	position: relative;
+	margin: auto;
+	display: flex;
+	align-items: middle;
+	justify-content:center;
+  }
+
+.popover__content {
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	left: -150px;
+	transform: translate(0, 10px);
+	background-color: wheat;
+	padding: 1.5rem;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+	width: auto;
+  }
+
+.popover__content:before {
+	position: absolute;
+	z-index: -1;
+	content: "";
+	right: calc(0%);
+	top: -8px;
+	border-style: solid;
+	border-width: 0 10px 10px 10px;
+	border-color: transparent transparent #bfbfbf transparent;
+	transition-duration: 0.3s;
+	transition-property: transform;
+  }
+  
+.popover__wrapper:hover .popover__content {
+	z-index: 10;
+	opacity: 1;
+	visibility: visible;
+	transform: translate(0, -20px);
+	transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+  }
+
+.popover__message {
+	text-align: center;
+  }
+  
