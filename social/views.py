@@ -1,6 +1,7 @@
 from django.shortcuts import render
 import urllib.request
 import json
+from random import randint
 from .models import *
 
 
@@ -25,15 +26,12 @@ def login(request):
     return render(request,'social/login.html',data)
 
 def home(request):
-    account = Account.objects.all()
+    accounts = Account.objects.all()
     posts = Post.objects.all()
-    context = {'account':account,'posts':posts}
+    context =  {'accounts':accounts,
+                'posts':posts}
     return render (request, 'social/home.html', context)
 
 def user(request):
     context = {}
     return render (request, 'social/user.html', context)
-
-def checkout(request):
-    context = {}
-    return render (request, 'social/checkout.html', context)

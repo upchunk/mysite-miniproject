@@ -4,7 +4,7 @@ class Account(models.Model):
     userID = models.CharField(max_length=200, null=True, blank=True)
     name = models.CharField(max_length=200, null=True)
     handle = models.CharField(max_length=200, null=True)
-    profileImage = models.ImageField(height_field=60, width_field=60, null=True, blank=True)
+    profileImage = models.URLField(null=True, blank=True, max_length=200)
     
     def __str__(self):
         return self.handle
@@ -16,7 +16,7 @@ class Post(models.Model):
     description = models.TextField(blank=True, null=True)
     likes = models.IntegerField(default=0, null=True)
     comments = models.IntegerField(default=0, null=True)
-    image = models.ImageField(height_field=600, width_field=340, null=True, blank=True)
+    image = models.URLField(null=True, blank=True, max_length=200)
     
     def __str__(self):
         return self.description
