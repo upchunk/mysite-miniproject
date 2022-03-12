@@ -7,7 +7,7 @@ from .models import *
 
 # Create your views here.
 
-def login(request):
+def index(request):
     request.method == 'POST'
     # retrieve imformation from weather api = https://weatherapi.com/api-explorer
     source = urllib.request.urlopen('http://api.weatherapi.com/v1/current.json?key=36b8d07f77ff471e80a60553220903&q=Surabaya&aqi=no').read()
@@ -23,7 +23,7 @@ def login(request):
             'icon':list_of_data["current"]['condition']['icon'],
             'city':str(list_of_data['location']['name'])
         }
-    return render(request,'social/login.html',data)
+    return render(request,'social/index.html',data)
 
 def home(request):
     accounts = Account.objects.all()
