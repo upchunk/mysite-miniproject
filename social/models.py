@@ -10,6 +10,7 @@ class Account(models.Model):
         return self.handle
 
 class Post(models.Model):
+    userID = models.CharField(max_length=200, null=True, blank=True)
     account = models.ForeignKey(Account, on_delete=models.CASCADE)
     name = models.CharField(max_length=200, null=True)
     postID = models.AutoField(primary_key=True)
@@ -19,6 +20,7 @@ class Post(models.Model):
     comments = models.IntegerField(default=0, null=True)
     image = models.URLField(null=True, blank=True, max_length=200)
     profileImage = models.URLField(null=True, blank=True, max_length=200)
+    follower = models.IntegerField(default=0, null=True)
     
     def __str__(self):
         return self.description

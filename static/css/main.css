@@ -205,6 +205,8 @@ a {
   }
 
 .popover__message {
-	text-align: center;
+	text-align: left;
+	font-family: 'Lucida Sans';
+	font-size: 14px;
   }
   
