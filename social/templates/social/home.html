@@ -1,0 +1,36 @@
+{% extends 'social/main.html' %}
+{% load static %}
+{% block content %}
+    {% csrf_token %}
+    <div class="row">
+        {% for post in posts %}
+        <div class="col-lg-4">
+            <img class="thumbnail" src="{% static 'images/holder.png' %}">
+            <div class="box-element product">
+                <div class="row user-element">
+                    <div class="col-2">
+                        <a href="{% url 'user' %}">
+                        <img  id="friends-icon" src="{% static 'images/userid.png' %}">
+                        </a>
+                    </div>
+                    <div class="col">
+                        <h6><strong>{{post.user}}</strong></h6>
+                    </div>
+                </div>
+                <p>{{post.description}}</p>
+                <hr>
+                <div>
+                    <button type="button" class="btn btn-outline-success" data-bs-toggle="button" autocomplete="onClick">Like</button>
+                    <button class ="btn btn-outline-secondary add-btn">Comment</button>
+                    <div style="float: right">
+                        <h6 style="display: inline-block;">{{post.likes}}</h4>
+                        <h6 style="display: inline-block;"> Like </h4>
+                        <h6 style="display: inline-block;">{{post.comments}}</h4>
+                        <h6 style="display: inline-block;"> Comment</h4>
+                    </div>
+                </div>   
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock content %}
