@@ -15,10 +15,7 @@ def index(request):
     list_of_data =json.loads(source)
 
     data ={
-            'country_code':str(list_of_data['location']['country']),
             'temp':str(list_of_data["current"]['temp_c']),
-            'pressure':str(list_of_data["current"]["pressure_mb"]),
-            'humidity':str(list_of_data["current"]['humidity']),
             'description':str(list_of_data["current"]['condition']['text']),
             'icon':list_of_data["current"]['condition']['icon'],
             'city':str(list_of_data['location']['name'])
